@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>jquery.toast</title>
+    <link type="text/css" rel="stylesheet" href="./toast/jquery.toast.min.css"/>
+</head>
+<body style="padding:10px; height: 100%; min-height: 800px;">
+    JQuery.toast
+
+    位置有："bottom-left","bottom-right","top-right","top-left","bottom-center","top-center","mid-center"
+
+    <script type="text/javascript" src="http://cdn.staticfile.org/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./toast/jquery.toast.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var type = "success";
+            if (type == "error") {
+                $.toast({
+                    position: 'bottom-left', icon: 'error', stack: false,
+                    heading: 'Error', text: '请填写备注',
+                });
+            } else if (type == "success") {
+                $.toast({
+                    position: 'mid-center', icon: 'success', stack: false,
+                    heading: 'Success', text: '添加成功，请继续添加下一条！',
+                });
+            } else if (type == "info") {
+                $.toast({
+                    position: 'top-center', icon: 'info', stack: false,
+                    heading: 'Info', text: '你的活动很多啊！',
+                });
+            } else if (type == "warning") {
+                $.toast({
+                    position: 'bottom-center', icon: 'warning', stack: false,
+                    heading: 'Warning', text: '你的活动很多啊！',
+                });
+            } else {
+                $.toast({
+                    position: 'bottom-right', stack: false,
+                    text: '欢迎光临！',
+                });
+            }
+        });
+    </script>
+</body>
+</html>
